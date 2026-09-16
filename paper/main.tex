@@ -743,36 +743,68 @@ variance.
 \textbf{MD AL Amin} (Matricola VR510263)
 
 \begin{itemize}\itemsep2pt
-\item \textbf{Idea development and methodology.} \emph{TODO}
-\item \textbf{Literature review.} \emph{TODO}
-\item \textbf{Coding.} \emph{TODO}
-\item \textbf{Experiments and analysis.} \emph{TODO}
-\item \textbf{Writing.} \emph{TODO}
+\item \textbf{Idea development and methodology.} \emph{[State which of the
+following this author contributed: framing FER as a few-shot problem; design of
+the held-out-emotion protocol and the choice of disgust/surprise as the
+withheld classes; selection of first-order MAML; the episodic task design
+($N$-way $K$-shot with within-episode relabelling).]}
+
+\item \textbf{Literature review.} \emph{[State which sources this author
+surveyed: the FER2013 benchmark history; the few-shot learning literature
+(MAML, Prototypical/Matching Networks); FER state-of-the-art results; the
+augmentation literature.]}
+
+\item \textbf{Coding.} \emph{[Name the modules this author wrote or
+substantially edited, from: \texttt{data.py} (loading, stratified split,
+augmentation, episodic sampler), \texttt{models.py} (ConvNet4, SimpleCNN,
+functional forward), \texttt{maml.py} (inner loop, meta-update,
+meta-evaluation), \texttt{train\_maml.py}, \texttt{train\_baseline.py},
+\texttt{train\_pretrained.py}, \texttt{evaluate.py},
+\texttt{predict\_ensemble.py}, the helper scripts.]}
+
+\item \textbf{Experiments and analysis.} \emph{[State which of the six runs
+this author executed and analysed: SimpleCNN; ConvNet4 (30 epochs); ConvNet4
+tuned (150 epochs); MAML $5$-way $5$-shot; ResNet-18 loss-checkpointed;
+ResNet-18 accuracy-checkpointed. Also note responsibility for the
+checkpoint-selection ablation and the per-class analysis.]}
+
+\item \textbf{Writing.} \emph{[Name the sections drafted: Abstract;
+Introduction; Method; Results; Conclusion; the system diagram
+(Fig.~\ref{fig:pipeline}); the tables.]}
 \end{itemize}
 
-\vspace{0.2cm}
+\vspace{0.25cm}
 \noindent
 \textbf{Md.\ Nazibul Islam} (Matricola VR528950)
 
 \begin{itemize}\itemsep2pt
-\item \textbf{Idea development and methodology.} \emph{TODO}
-\item \textbf{Literature review.} \emph{TODO}
-\item \textbf{Coding.} \emph{TODO}
-\item \textbf{Experiments and analysis.} \emph{TODO}
-\item \textbf{Writing.} \emph{TODO}
+\item \textbf{Idea development and methodology.} \emph{[As above --- state this
+author's specific contribution to the framing, the held-out protocol, the
+choice of method, or the episodic task design.]}
+
+\item \textbf{Literature review.} \emph{[As above --- state which bodies of
+work this author surveyed.]}
+
+\item \textbf{Coding.} \emph{[As above --- name the modules this author wrote
+or substantially edited.]}
+
+\item \textbf{Experiments and analysis.} \emph{[As above --- state which runs
+this author executed and analysed.]}
+
+\item \textbf{Writing.} \emph{[As above --- name the sections drafted.]}
 \end{itemize}
 
 \vspace{0.3cm}
 \noindent
-For reference when completing the above, the work comprised: formulation of FER
-as a few-shot problem and design of the held-out-emotion protocol; a survey of
-FER2013 results and the few-shot learning literature; the data pipeline and
-episodic sampler (\texttt{data.py}), architectures (\texttt{models.py}), MAML
-inner and outer loops (\texttt{maml.py}), the training entry points
-(\texttt{train\_maml.py}, \texttt{train\_baseline.py},
-\texttt{train\_pretrained.py}) and evaluation code (\texttt{evaluate.py}); six
-training runs together with the checkpoint-selection ablation; and this report
-including the system diagram.
+\textit{Completion note (delete before submission).} The bracketed prompts
+above enumerate the work actually carried out, so that each item can be
+assigned to whoever performed it. The division need not be equal --- an uneven
+split is expected and unproblematic provided it is stated accurately. What the
+brief penalises is a stated contribution that does not match the real one, and
+the penalty falls on the whole team rather than on the individual. Every
+bracketed prompt must be replaced with a factual statement, and any area a
+given author did not work on should say so plainly rather than being left
+vague.
 
 \vspace{0.2cm}
 \noindent
