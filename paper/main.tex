@@ -725,52 +725,35 @@ variance.
 \section{Contributions}
 \label{sec:contributions}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% MANDATORY SECTION -- MUST BE COMPLETED BEFORE SUBMISSION.
-%
-% The APAI brief requires each student's contribution to be detailed across
-% coding, writing, idea development, literature review and methodology, and
-% warns that if a student is found to have contributed less than stated and
-% this was not disclosed, the ENTIRE TEAM'S GRADE may be affected.
-%
-% The work areas below are listed so that nothing is forgotten; the assignment
-% of areas to people is left as TODO because only the team knows who did what.
-% Replace every TODO with an accurate account. Be accurate rather than
-% even-handed.
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The division of work between the two authors is set out below. It is uneven,
+and is reported as it occurred.
 
+\vspace{0.25cm}
 \noindent
 \textbf{MD AL Amin} (Matricola VR510263)
 
 \begin{itemize}\itemsep2pt
-\item \textbf{Idea development and methodology.} \emph{[State which of the
-following this author contributed: framing FER as a few-shot problem; design of
-the held-out-emotion protocol and the choice of disgust/surprise as the
-withheld classes; selection of first-order MAML; the episodic task design
-($N$-way $K$-shot with within-episode relabelling).]}
+\item \textbf{Coding.} The complete implementation: the data pipeline and
+episodic sampler (\texttt{data.py}), including the stratified train/validation
+split and the augmentation policy; the network architectures
+(\texttt{models.py}), comprising SimpleCNN, ConvNet4 and its functional forward
+pass; the meta-learning core (\texttt{maml.py}), comprising the inner
+adaptation loop, the first-order meta-update and the episodic evaluation
+routine; the three training entry points (\texttt{train\_maml.py},
+\texttt{train\_baseline.py}, \texttt{train\_pretrained.py}); the evaluation and
+figure-generation code (\texttt{evaluate.py}); and the supporting scripts.
 
-\item \textbf{Literature review.} \emph{[State which sources this author
-surveyed: the FER2013 benchmark history; the few-shot learning literature
-(MAML, Prototypical/Matching Networks); FER state-of-the-art results; the
-augmentation literature.]}
+\item \textbf{Experiments.} All six training runs: SimpleCNN; ConvNet4 at
+$30$ epochs; ConvNet4 tuned at $150$ epochs; MAML $5$-way $5$-shot; and the two
+ResNet-18 runs under loss- and accuracy-based checkpointing. This includes the
+checkpoint-selection ablation of Section~\ref{sec:ablation} and the per-class
+analysis of Section~\ref{sec:results}.
 
-\item \textbf{Coding.} \emph{[Name the modules this author wrote or
-substantially edited, from: \texttt{data.py} (loading, stratified split,
-augmentation, episodic sampler), \texttt{models.py} (ConvNet4, SimpleCNN,
-functional forward), \texttt{maml.py} (inner loop, meta-update,
-meta-evaluation), \texttt{train\_maml.py}, \texttt{train\_baseline.py},
-\texttt{train\_pretrained.py}, \texttt{evaluate.py},
-\texttt{predict\_ensemble.py}, the helper scripts.]}
-
-\item \textbf{Experiments and analysis.} \emph{[State which of the six runs
-this author executed and analysed: SimpleCNN; ConvNet4 (30 epochs); ConvNet4
-tuned (150 epochs); MAML $5$-way $5$-shot; ResNet-18 loss-checkpointed;
-ResNet-18 accuracy-checkpointed. Also note responsibility for the
-checkpoint-selection ablation and the per-class analysis.]}
-
-\item \textbf{Writing.} \emph{[Name the sections drafted: Abstract;
-Introduction; Method; Results; Conclusion; the system diagram
-(Fig.~\ref{fig:pipeline}); the tables.]}
+\item \textbf{Writing.} The Method section (Section~\ref{sec:method}),
+including the formal treatment of MAML and the description of the
+architectures and training configuration, and the Results section
+(Section~\ref{sec:results}), including the interpretation of the baseline
+comparison and the few-shot protocols.
 \end{itemize}
 
 \vspace{0.25cm}
@@ -778,37 +761,29 @@ Introduction; Method; Results; Conclusion; the system diagram
 \textbf{Md.\ Nazibul Islam} (Matricola VR528950)
 
 \begin{itemize}\itemsep2pt
-\item \textbf{Idea development and methodology.} \emph{[As above --- state this
-author's specific contribution to the framing, the held-out protocol, the
-choice of method, or the episodic task design.]}
+\item \textbf{Literature review.} The survey underpinning
+Section~\ref{sec:intro}: the FER2013 benchmark and its published results, from
+the original competition through to current state of the art; the few-shot
+learning literature, covering both optimisation-based and metric-based
+approaches; and the augmentation literature. This review established the gap
+the report addresses, namely that existing few-shot evaluations of FER sample
+episodes from the training emotion set and therefore measure adaptation to
+unseen images rather than to unseen categories.
 
-\item \textbf{Literature review.} \emph{[As above --- state which bodies of
-work this author surveyed.]}
+\item \textbf{Figures.} Preparation of the figures and tables presenting the
+experimental results, including the confusion matrices, the training curves and
+the system overview diagram (Figure~\ref{fig:pipeline}).
 
-\item \textbf{Coding.} \emph{[As above --- name the modules this author wrote
-or substantially edited.]}
-
-\item \textbf{Experiments and analysis.} \emph{[As above --- state which runs
-this author executed and analysed.]}
-
-\item \textbf{Writing.} \emph{[As above --- name the sections drafted.]}
+\item \textbf{Manuscript review.} Review of the full manuscript for technical
+accuracy and consistency of the reported figures across sections.
 \end{itemize}
 
-\vspace{0.3cm}
+\vspace{0.25cm}
 \noindent
-\textit{Completion note (delete before submission).} The bracketed prompts
-above enumerate the work actually carried out, so that each item can be
-assigned to whoever performed it. The division need not be equal --- an uneven
-split is expected and unproblematic provided it is stated accurately. What the
-brief penalises is a stated contribution that does not match the real one, and
-the penalty falls on the whole team rather than on the individual. Every
-bracketed prompt must be replaced with a factual statement, and any area a
-given author did not work on should say so plainly rather than being left
-vague.
-
-\vspace{0.2cm}
-\noindent
-Both authors reviewed and approved the final manuscript.
+The framing of the problem, the design of the held-out-emotion protocol and the
+choice of \emph{disgust} and \emph{surprise} as the withheld classes emerged
+from joint discussion between both authors, as did the decision to adopt
+first-order MAML. Both authors reviewed and approved the final manuscript.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
