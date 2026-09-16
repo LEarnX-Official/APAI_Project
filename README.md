@@ -1,6 +1,6 @@
 # Few-Shot Facial Emotion Recognition with MAML
 
-APAI (AA. 2024-2025) course project. Meta-learning for facial expression
+APAI (AA. 2025-2026) course project. Meta-learning for facial expression
 recognition on FER2013, with supervised baselines for comparison.
 
 ## Motivation
